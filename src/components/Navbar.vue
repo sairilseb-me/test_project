@@ -14,7 +14,7 @@
                 </v-icon>
             </v-btn>
        </v-app-bar>
-       <v-navigation-drawer app v-model="drawer" class="grey lighten-3">
+       <v-navigation-drawer app v-model="drawer" class="grey lighten-4">
         <div class="d-flex justify-end">
             <v-btn text @click="triggerDrawer">
                 <v-icon>
@@ -22,7 +22,20 @@
                 </v-icon>
            </v-btn>
         </div>
-           
+        <v-list>
+            <v-list-item v-for="(link, i) in links" :key="i" router :to="link.route">
+                <v-list-item-icon>
+                    <v-icon>
+                        {{ link.icon }}
+                    </v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-title  class="text-capitalize">
+                       {{ link.title }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+        </v-list>
        </v-navigation-drawer>
     </nav>
 </template>
@@ -33,6 +46,28 @@ export default {
     data(){
         return{
             drawer: false,
+            links: [
+                {
+                    title: 'dashboard',
+                    icon: 'mdi-view-dashboard',
+                    route: '/'
+                },
+                {
+                    title: 'about us',
+                    icon: 'mdi-information',
+                    route: '/about'
+                },
+                {
+                    title: 'projects',
+                    icon: 'mdi-folder',
+                    route: '/projects'
+                },
+                {
+                    title: 'teams',
+                    icon: 'mdi-microsoft-teams',
+                    route: '/teams'
+                }
+            ],
         }
     },
     methods: {
