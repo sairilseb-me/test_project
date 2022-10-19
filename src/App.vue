@@ -1,19 +1,22 @@
 <template>
   <v-app>
-    <v-content>
+    <navbar></navbar>
+    <v-main class="grey lighten-5">
       <router-view></router-view>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
+import Navbar from './components/Navbar.vue';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld
+    HelloWorld,
+    'navbar': Navbar,
   },
 
   data: () => ({
