@@ -1,12 +1,27 @@
 <template>
-    <div class="dashboard">
+    <div class="dashboard mx-5">
         <h1>Dashboard</h1>
-        <p class="red white--text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ipsum quibusdam fugit minima accusamus quis provident nostrum corporis, delectus commodi quod ut? Mollitia asperiores blanditiis facere tempore ullam dicta eos.</p>
-        <p class="purple accent-1 blue--text text--darker-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatum obcaecati atque ex minima adipisci asperiores labore cumque iste nobis, qui enim sequi voluptates sint hic repudiandae recusandae ipsam at!</p>
-        <h1 class="display-4 font-weight-black">Massive Display</h1>
-        <h4 class="display-1">Small Display</h4>
-        <p class="headline">Headline</p>
-        <p class="subheading font-weight-bold">This is sub heading</p>
-        <p class="caption">This is a caption</p>
+        <v-btn depress elevation="10" dark class="pink px-5 mx-2">Click Me</v-btn>
+        <v-btn outlined class="pink white--text px-5">Click Me</v-btn>
+
+        <v-btn depressed class="pink white--text mx-2">
+            <v-icon left>
+                mdi-email
+            </v-icon>
+            <span>Email Me</span>
+        </v-btn>
+
+        <v-btn depressed dark color="purple" class="accent-6">
+            <v-icon left>
+                mdi-email
+            </v-icon>
+            <span>Email Me</span>
+        </v-btn>
+
+        <v-btn depressed fab dark small color="purple" class="accent-6 mx-2">
+            <v-icon small>
+                mdi-heart
+            </v-icon>
+        </v-btn>
     </div>
 </template>
