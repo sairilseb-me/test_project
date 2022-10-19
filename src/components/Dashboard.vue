@@ -1,6 +1,9 @@
 <template>
-    <div class="dashboard mx-5">
-        <h1>Dashboard</h1>
-       
+    <div class="container">
+       <v-subheader>
+            Dashboard
+       </v-subheader>
+       <v-divider></v-divider>
+       <v-container class="my-5">Content</v-container>
     </div>
 </template>

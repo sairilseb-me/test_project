@@ -1,5 +1,8 @@
 <template>
-    <div class="container mx-5">
-        <h1>About Us</h1>
+    <div class="container">
+        <v-subheader>
+            About Us
+       </v-subheader>
+       <v-divider></v-divider>
     </div>
 </template>
