@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div>
         <v-subheader>
             About Us
        </v-subheader>
