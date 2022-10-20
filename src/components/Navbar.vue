@@ -22,6 +22,16 @@
                 </v-icon>
            </v-btn>
         </div>
+        <v-row class="d-flex justify-center">
+            <v-avatar size="100" color="grey">
+                <v-icon dark size="50">
+                    mdi-account
+                </v-icon>
+            </v-avatar>
+        </v-row>
+        <v-row class="d-flex flex-column align-center">
+            <h5 class="font-weight-light my-3">Welcome, Sairil</h5>
+        </v-row>
         <v-list>
             <v-list-item v-for="(link, i) in links" :key="i" router :to="link.route">
                 <v-list-item-icon>
