@@ -5,7 +5,7 @@
        </v-subheader>
        <v-divider></v-divider>
        <v-container class="my-5">
-        <v-card flat class="pa-3">
+        <v-card class="pa-3">
              <v-card flat class="text-xs-center">
                 <v-row v-for="(data, index) in datas" :key="index">
                     <v-col cols="12" md="6" sm="12">

@@ -7,10 +7,13 @@
        <v-container>
            <v-row>
                <v-col cols="6" md="4" sm="6" v-for="(team, index) in teams" :key="index">
-                    <v-card flat class="text-center pa-3">
-                        <v-card-title><span class="text-center">Name: {{ team.name }}</span></v-card-title>
+                    <v-card class="text-center pa-3">
+                        <v-card-title><span>Name: {{ team.name }}</span></v-card-title>
                         <v-divider></v-divider>
                         <v-card-subtitle>Role: {{ team.role }}</v-card-subtitle>
+                        <v-card-action>
+                            <v-btn depressed outlined dark color="purple"><v-icon left>mdi-message</v-icon> Message</v-btn>
+                        </v-card-action>
                     </v-card>
                </v-col>
            </v-row>
