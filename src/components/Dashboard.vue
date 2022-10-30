@@ -6,12 +6,24 @@
        <v-divider></v-divider>
        <v-container class="my-5">
         <v-row class="mb-5">
-            <v-btn small text color="grey" @click="sortBy('title')"><v-icon left small>
-                mdi-folder
-            </v-icon><span class="caption text-lowercase">By Project Name</span></v-btn>
-            <v-btn small text color="grey"  @click="sortBy('person')"><v-icon left small>
-                mdi-account
-            </v-icon><span class="caption text-lowercase">By Person</span></v-btn>
+            <v-tooltip top>
+                <template v-slot:activator="{on, attrs}">
+                    <v-btn small text color="grey" @click="sortBy('title')" v-bind="attrs" v-on="on"><v-icon left small>
+                    mdi-folder
+                    </v-icon><span class="caption text-lowercase">By Project Name</span></v-btn>
+                </template>
+                <span>Sort by projects</span>
+            </v-tooltip>
+            
+            <v-tooltip top>
+                <template v-slot:activator="{on, attrs}">
+                    <v-btn small text color="grey"  @click="sortBy('person')" v-on="on" v-bind="attrs"><v-icon left small>
+                        mdi-account
+                    </v-icon><span class="caption text-lowercase">By Person</span></v-btn>
+                </template>
+                <span>Sort by Person</span>
+            </v-tooltip>
+            
         </v-row>
         <v-card flat class="text-xs-center" v-for="(data, index) in datas" :key="index">
             <v-row :class="`project ${data.status}`">
@@ -67,7 +79,35 @@ export default {
     methods: {
         sortBy(value){
             if(value === 'title'){
-                
+                this.datas.sort((a,b)=>{
+                    let ta = a.title.toLowerCase(), tb = b.title.toLowerCase();
+                    
+                    if(ta < tb){
+                        return -1;
+                    }
+
+                    if(ta > tb){
+                        return 1;
+                    }
+
+                    return 0
+                })
+            }
+
+            if(value === 'person'){
+                this.datas.sort((a, b)=>{
+                    let pa = a.person.toLowerCase(), pb = b.person.toLowerCase();
+
+                    if(pa < pb){
+                        return -1
+                    }
+
+                    if(pa > pb){
+                        return 1;
+                    }
+
+                    return 0;
+                })
             }
         }
     }
