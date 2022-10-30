@@ -40,6 +40,7 @@
 <script>
 
 import moment  from 'moment';
+import db from '../firebase';
 export default {
     data: () => ({
         title: '',
@@ -54,9 +55,20 @@ export default {
         closeModal(){
             this.showModal = false
         },
-        submit(){
+        async submit(){
             if(this.$refs.form.validate()){
-                console.log(this.title, this.content)
+                const project = {
+                    title: this.title,
+                    content: this.content,
+                    due_date: this.dueDate,
+                    person: 'Saiil Seberiaga',
+                    status: 'completed'
+                }
+
+            db.collection('projects').add(project).then((docRef)=> {
+                console.log(docRef);
+            })
+                
                 this.closeModal();
                 this.clearTextField()
             }
