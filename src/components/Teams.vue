@@ -13,7 +13,7 @@
                                 mdi-account-circle
                             </v-icon>
                         </v-avatar>
-                        <v-card-title><span>Name: {{ team.name }}</span></v-card-title>
+                        <v-card-title><span class="text-center">Name: {{ team.name }}</span></v-card-title>
                         <v-divider></v-divider>
                         <v-card-subtitle>Role: {{ team.role }}</v-card-subtitle>
                         <v-card-actions class="d-flex justify-center">

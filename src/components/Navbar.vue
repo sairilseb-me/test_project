@@ -7,6 +7,24 @@
                 <span>Ninja</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
+            <v-menu offset-y>
+                <template v-slot:activator="{on, attrs}"
+                >
+                    <v-btn text small outlined color="grey"
+                    v-bind="attrs"
+                    v-on="on">
+                        <v-icon>
+                            mdi-chevron-down
+                        </v-icon>
+                        <span>Menu</span>
+                    </v-btn>
+                </template>
+                <v-list>
+                    <v-list-item v-for="link, index in links" :key="index" router :to="link.route">
+                        {{ link.title }}
+                    </v-list-item>
+                </v-list>
+            </v-menu>
             <v-btn text small color="grey" class="mx-2">
                 <span>Sign Out</span>
                 <v-icon right>
@@ -32,6 +50,9 @@
         <v-row class="d-flex flex-column align-center">
             <h5 class="font-weight-light my-3">Welcome, Sairil</h5>
         </v-row>
+        <v-row class="d-flex flex-column align-center my-2">
+            <popup></popup>
+        </v-row>
         <v-list>
             <v-list-item v-for="(link, i) in links" :key="i" router :to="link.route">
                 <v-list-item-icon>
@@ -52,7 +73,11 @@
 
 <script>
 
+import Popup from './Popup.vue';
 export default {
+    components: {
+        'popup':Popup 
+    },  
     data(){
         return{
             drawer: false,
